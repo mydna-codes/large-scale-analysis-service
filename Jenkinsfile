@@ -94,12 +94,6 @@ pipeline {
                         .kube/large-scale-analysis.yaml > .kube/large-scale-analysis.tmp
                     """
                     sh "mv -f .kube/large-scale-analysis.tmp .kube/large-scale-analysis.yaml"
-
-                    sh """ \
-                    sed -e 's+{{NAMESPACE}}+$environment.namespace+g' \
-                        .kube/large-scale-analysis-db.yaml > .kube/large-scale-analysis-db.tmp
-                    """
-                    sh "mv -f .kube/large-scale-analysis-db.tmp .kube/large-scale-analysis-db.yaml"
                 }
             }
         }
@@ -107,7 +101,7 @@ pipeline {
             steps {
 
                 withKubeConfig([credentialsId: KUBERNETES_CREDENTIALS]) {
-                    sh "kubectl apply -f .kube/"
+                    sh "kubectl apply -f .kube/large-scale-analysis.yaml"
                 }
             }
         }
@@ -116,9 +110,9 @@ pipeline {
         success {
             slackSend (color: '#57BA57',
                        message: """[<${env.BUILD_URL}|Build ${env.BUILD_NUMBER}>] *SUCCESSFUL*\n
-                                  |Job: *${env.JOB_NAME}*\n
-                                  |Branch: ${GIT_BRANCH}
-                                  |Author: ${COMMIT_AUTHOR}
+                                  |Version: `${PROJECT_ARTIFACT_ID}:${PROJECT_VERSION}`\n
+                                  |Branch:  *${GIT_BRANCH}*
+                                  |Author:  ${COMMIT_AUTHOR}
                                   |Message: ${COMMIT_MESSAGE}""".stripMargin()
             )
         }
