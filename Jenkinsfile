@@ -101,15 +101,16 @@ pipeline {
         }
         stage("Deploy application") {
             steps {
-                try {
-                    if (!(env.GIT_BRANCH.equals("prod") || env.GIT_BRANCH.equals("origin/prod"))) {
-                        withKubeConfig([credentialsId: KUBERNETES_CREDENTIALS]) {
-                            sh "kubectl delete deployments.apps -n mydnacodes analysis-app"
+                script {
+                    try {
+                        if (!(env.GIT_BRANCH.equals("prod") || env.GIT_BRANCH.equals("origin/prod"))) {
+                            withKubeConfig([credentialsId: KUBERNETES_CREDENTIALS]) {
+                                sh "kubectl delete deployments.apps -n mydnacodes analysis-app"
+                            }
                         }
+                    } catch (Exception e) {
+                        echo "Previous deployment has not been removed."
                     }
-                } catch (Exception e) {
-                    echo "Previous deployment has not been removed."
-                    echo e.getMessage()
                 }
                 withKubeConfig([credentialsId: KUBERNETES_CREDENTIALS]) {
                     sh "kubectl apply -f .kube/large-scale-analysis.yaml"
