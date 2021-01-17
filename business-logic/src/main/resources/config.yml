@@ -1,0 +1,39 @@
+kumuluzee:
+  name: large-scale-analysis
+  version: 1.0.0-SNAPSHOT
+  dev:
+    scan-libraries:
+      - large-scale-analysis-lib
+      - rest-lib
+  env:
+    prod: false
+    name: dev
+  server:
+    show-server-info: false
+    base-url: http://localhost:8080
+    http:
+      port: 8080
+  grpc:
+    clients:
+      - name: sequence-bank-grpc-client
+        port: 8081
+        address: localhost
+      - name: analysis-result-grpc-client
+        port: 8082
+        address: localhost
+  streaming:
+    kafka:
+      consumer:
+        bootstrap-servers: localhost:9091
+        group-id: group1
+        enable-auto-commit: true
+        auto-commit-interval-ms: 1000
+        auto-offset-reset: earliest
+        key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+        value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#  health:
+#    servlet:
+#      mapping: /health/
+#      enabled: true
+#    checks:
+      # TODO: Add Kafka health check
