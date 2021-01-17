@@ -105,7 +105,7 @@ pipeline {
                     try {
                         if (!(env.GIT_BRANCH.equals("prod") || env.GIT_BRANCH.equals("origin/prod"))) {
                             withKubeConfig([credentialsId: KUBERNETES_CREDENTIALS]) {
-                                sh "kubectl delete deployments.apps -n mydnacodes analysis-app"
+                                sh "kubectl delete deployments.apps -n mydnacodes large-scale-analysis-app"
                             }
                         }
                     } catch (Exception e) {
