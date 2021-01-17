@@ -31,9 +31,12 @@ kumuluzee:
         auto-offset-reset: earliest
         key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
         value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-#  health:
-#    servlet:
-#      mapping: /health/
-#      enabled: true
-#    checks:
-      # TODO: Add Kafka health check
+  health:
+    servlet:
+      mapping: /health/
+      enabled: true
+    checks:
+      kafka-health-check:
+        bootstrap-servers: localhost:9091
+        minimum-available-nodes: 1
+        request-timeout-ms: 1000
