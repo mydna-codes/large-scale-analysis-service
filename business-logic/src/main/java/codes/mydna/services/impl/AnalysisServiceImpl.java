@@ -46,8 +46,6 @@ public class AnalysisServiceImpl implements AnalysisService {
     @Override
     public void analyze(AnalysisRequest request, User user) {
 
-        LOG.info("Received analysis request");
-
         AnalysisResult result = new AnalysisResult();
 
         Assert.fieldNotEmpty(request.getDnaId(), "dnaId");
@@ -84,7 +82,6 @@ public class AnalysisServiceImpl implements AnalysisService {
         result.setAnalysisExecutionTime((int) (System.currentTimeMillis() - analysisTimer));
         result.setTotalExecutionTime((int) (System.currentTimeMillis() - totalExecTimer));
 
-        LOG.info("--- Analysis result saved! ---");
         analysisResultGrpcClient.insertAnalysisResult(result, user);
 
     }

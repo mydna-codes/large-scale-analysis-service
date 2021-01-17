@@ -22,8 +22,6 @@ public class KafkaConsumer {
     @StreamListener(topics = {"large_scale_analysis"})
     public void onMessage(ConsumerRecord<String, String> record) {
 
-        LOG.info("Message accepted");
-
         LargeScaleAnalysisRequest request;
         try {
             ObjectMapper mapper = new ObjectMapper();
@@ -32,8 +30,6 @@ public class KafkaConsumer {
             LOG.severe("Failed to deserialize AnalysisRequest object!");
             return;
         }
-
-        LOG.info("Message dna id: " + request.getAnalysisRequest().getDnaId());
 
         analysisService.analyze(request.getAnalysisRequest(), request.getUser());
     }
