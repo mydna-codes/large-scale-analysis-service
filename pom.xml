@@ -20,7 +20,7 @@
         <kumuluzee-config-mp.version>1.4.1</kumuluzee-config-mp.version>
         <kumuluzee-health.version>2.3.0</kumuluzee-health.version>
         <kumuluzee-grpc.version>1.1.0</kumuluzee-grpc.version>
-        <kumuluzee-streaming.version>1.2.0</kumuluzee-streaming.version>
+        <kumuluzee-streaming.version>1.2.2</kumuluzee-streaming.version>
 
         <!-- mydnacodes -->
         <mydnacodes-rest-lib.version>1.0.2-SNAPSHOT</mydnacodes-rest-lib.version>
