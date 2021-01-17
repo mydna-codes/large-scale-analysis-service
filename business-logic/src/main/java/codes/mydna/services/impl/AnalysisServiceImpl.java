@@ -85,7 +85,7 @@ public class AnalysisServiceImpl implements AnalysisService {
         result.setTotalExecutionTime((int) (System.currentTimeMillis() - totalExecTimer));
 
         LOG.info("--- Analysis result saved! ---");
-        //analysisResultGrpcClient.insertAnalysisResult(result, user);
+        analysisResultGrpcClient.insertAnalysisResult(result, user);
 
     }
 
