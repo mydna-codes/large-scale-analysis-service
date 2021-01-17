@@ -7,7 +7,7 @@ ENV KUMULUZEE_ENV_PROD=false
 RUN mkdir /app
 WORKDIR /app
 
-ADD ./api/target/large-scale-analysis.jar /app
+ADD ./business-logic/target/large-scale-analysis.jar /app
 
 EXPOSE 8080
 
