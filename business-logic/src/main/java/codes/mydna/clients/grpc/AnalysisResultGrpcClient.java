@@ -39,7 +39,7 @@ public class AnalysisResultGrpcClient {
         }
     }
 
-    public AnalysisResult insertAnalysisResult(AnalysisResult result, User user) {
+    public void insertAnalysisResult(AnalysisResult result, User user) {
 
         AnalysisResultProto.AnalysisResultInsertionRequest request;
         request = AnalysisResultProto.AnalysisResultInsertionRequest.newBuilder()
@@ -55,18 +55,23 @@ public class AnalysisResultGrpcClient {
             result.setId(response.getAnalysisResultId());
             result.setStatus(Status.OK);
 
+            LOG.info("Analysis result successfully saved");
+
         } catch (Exception e) {
 
+            LOG.info("Request to save analysis result has failed.");
+
             if (e.getMessage().equals(io.grpc.Status.NOT_FOUND.getCode().name())) {
+                LOG.info("Entity not found.");
                 result.setStatus(Status.ENTITY_NOT_FOUND);
             } else if (e.getMessage().equals(io.grpc.Status.PERMISSION_DENIED.getCode().name())) {
+                LOG.info("Unauthorized.");
                 result.setStatus(Status.UNAUTHORIZED);
             } else {
+                LOG.info("Internal server error");
                 result.setStatus(Status.INTERNAL_SERVER_ERROR);
             }
         }
-
-        return result;
     }
 
 }
