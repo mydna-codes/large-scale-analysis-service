@@ -6,7 +6,7 @@
 
     <groupId>codes.mydna</groupId>
     <artifactId>large-scale-analysis</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>0.1.3</version>
     <packaging>pom</packaging>
 
     <properties>
@@ -25,8 +25,8 @@
         <!-- mydnacodes -->
         <mydnacodes-rest-lib.version>1.0.2</mydnacodes-rest-lib.version>
         <mydnacodes-auth-lib.version>1.0.0</mydnacodes-auth-lib.version>
-        <mydnacodes-analysis-result-lib.version>1.0.0-SNAPSHOT</mydnacodes-analysis-result-lib.version>
-        <mydnacodes-sequence-bank-lib.version>1.0.0-SNAPSHOT</mydnacodes-sequence-bank-lib.version>
+        <mydnacodes-analysis-result-lib.version>0.1.2</mydnacodes-analysis-result-lib.version>
+        <mydnacodes-sequence-bank-lib.version>0.1.0</mydnacodes-sequence-bank-lib.version>
     </properties>
 
     <dependencyManagement>
@@ -36,7 +36,7 @@
             <dependency>
                 <groupId>codes.mydna</groupId>
                 <artifactId>large-scale-analysis-lib</artifactId>
-                <version>1.0.0-SNAPSHOT</version>
+                <version>0.1.3</version>
             </dependency>
 
             <!-- KumuluzEE (BOM - Bills of Material) -->
