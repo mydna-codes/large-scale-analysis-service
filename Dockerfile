@@ -7,7 +7,7 @@ ENV KUMULUZEE_ENV_PROD=false
 RUN mkdir /app
 WORKDIR /app
 
-ADD ./api/target /app
+ADD ./business-logic/target /app
 
 EXPOSE 8080
 
