@@ -7,8 +7,8 @@ ENV KUMULUZEE_ENV_PROD=false
 RUN mkdir /app
 WORKDIR /app
 
-ADD ./business-logic/target/large-scale-analysis.jar /app
+ADD ./api/target /app
 
 EXPOSE 8080
 
-CMD ["java", "-jar", "large-scale-analysis.jar", "com.kumuluz.ee.EeApplication"]
+CMD ["java", "-cp", "classes:dependency/*", "com.kumuluz.ee.EeApplication"]
