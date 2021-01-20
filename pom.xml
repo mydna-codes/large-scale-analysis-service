@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>codes.mydna</groupId>
+    <groupId>codes.mydna.large-scale-analysis</groupId>
     <artifactId>large-scale-analysis</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
@@ -22,11 +22,11 @@
         <kumuluzee-grpc.version>1.1.0</kumuluzee-grpc.version>
         <kumuluzee-streaming.version>1.2.2</kumuluzee-streaming.version>
 
-        <!-- mydnacodes -->
-        <mydnacodes-rest-lib.version>1.0.2</mydnacodes-rest-lib.version>
-        <mydnacodes-auth-lib.version>1.0.0</mydnacodes-auth-lib.version>
-        <mydnacodes-analysis-result-lib.version>1.0.0-SNAPSHOT</mydnacodes-analysis-result-lib.version>
-        <mydnacodes-sequence-bank-lib.version>1.0.0-SNAPSHOT</mydnacodes-sequence-bank-lib.version>
+        <!-- MyDnaCodes -->
+        <mydnacodes-rest-lib.version>1.0.3-SNAPSHOT</mydnacodes-rest-lib.version>
+        <mydnacodes-auth-lib.version>1.0.1-SNAPSHOT</mydnacodes-auth-lib.version>
+        <mydnacodes-analysis-result.version>1.0.0-SNAPSHOT</mydnacodes-analysis-result.version>
+        <mydnacodes-sequence-bank.version>1.0.0-SNAPSHOT</mydnacodes-sequence-bank.version>
     </properties>
 
     <dependencyManagement>
@@ -34,7 +34,7 @@
 
             <!-- Internal modules -->
             <dependency>
-                <groupId>codes.mydna</groupId>
+                <groupId>codes.mydna.large-scale-analysis</groupId>
                 <artifactId>large-scale-analysis-lib</artifactId>
                 <version>1.0.0-SNAPSHOT</version>
             </dependency>
@@ -76,26 +76,26 @@
                 <version>${kumuluzee-streaming.version}</version>
             </dependency>
 
-            <!-- mydnacodes -->
+            <!-- MyDnaCodes -->
             <dependency>
-                <groupId>codes.mydna</groupId>
+                <groupId>codes.mydna.rest</groupId>
                 <artifactId>rest-lib</artifactId>
                 <version>${mydnacodes-rest-lib.version}</version>
             </dependency>
             <dependency>
-                <groupId>codes.mydna</groupId>
+                <groupId>codes.mydna.auth</groupId>
                 <artifactId>auth-common</artifactId>
                 <version>${mydnacodes-auth-lib.version}</version>
             </dependency>
             <dependency>
-                <groupId>codes.mydna</groupId>
+                <groupId>codes.mydna.sequence-bank</groupId>
                 <artifactId>sequence-bank-lib-v1</artifactId>
-                <version>${mydnacodes-sequence-bank-lib.version}</version>
+                <version>${mydnacodes-sequence-bank.version}</version>
             </dependency>
             <dependency>
-                <groupId>codes.mydna</groupId>
+                <groupId>codes.mydna.analysis-result</groupId>
                 <artifactId>analysis-result-lib-v1</artifactId>
-                <version>${mydnacodes-analysis-result-lib.version}</version>
+                <version>${mydnacodes-analysis-result.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

@@ -1,7 +1,7 @@
 package codes.mydna.services;
 
+import codes.mydna.analysis_result.lib.AnalysisRequest;
 import codes.mydna.auth.common.models.User;
-import codes.mydna.lib.AnalysisRequest;
 
 /**
  * @see codes.mydna.services.impl.AnalysisServiceImpl

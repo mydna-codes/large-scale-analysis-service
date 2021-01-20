@@ -1,7 +1,7 @@
-package codes.mydna.lib.large_scale;
+package codes.mydna.large_scale_analysis.lib;
 
 import codes.mydna.auth.common.models.User;
-import codes.mydna.lib.AnalysisRequest;
+import codes.mydna.analysis_result.lib.AnalysisRequest;
 
 public class LargeScaleAnalysisRequest {
 

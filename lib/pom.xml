@@ -5,8 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
+        <groupId>codes.mydna.large-scale-analysis</groupId>
         <artifactId>large-scale-analysis</artifactId>
-        <groupId>codes.mydna</groupId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 
@@ -16,11 +16,11 @@
 
     <dependencies>
         <dependency>
-            <groupId>codes.mydna</groupId>
+            <groupId>codes.mydna.auth</groupId>
             <artifactId>auth-common</artifactId>
         </dependency>
         <dependency>
-            <groupId>codes.mydna</groupId>
+            <groupId>codes.mydna.analysis-result</groupId>
             <artifactId>analysis-result-lib-v1</artifactId>
         </dependency>
     </dependencies>

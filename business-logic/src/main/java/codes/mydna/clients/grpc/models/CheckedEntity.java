@@ -1,7 +1,7 @@
 package codes.mydna.clients.grpc.models;
 
 
-import codes.mydna.lib.enums.Status;
+import codes.mydna.analysis_result.lib.enums.Status;
 
 public class CheckedEntity<E> {
 

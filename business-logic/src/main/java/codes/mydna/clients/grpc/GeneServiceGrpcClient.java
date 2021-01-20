@@ -1,11 +1,11 @@
 package codes.mydna.clients.grpc;
 
 import codes.mydna.auth.common.models.User;
-import codes.mydna.lib.Gene;
-import codes.mydna.lib.grpc.GeneServiceGrpc;
-import codes.mydna.lib.grpc.GeneServiceProto;
-import codes.mydna.lib.grpc.mappers.GrpcGeneMapper;
-import codes.mydna.lib.grpc.mappers.GrpcUserMapper;
+import codes.mydna.sequence_bank.lib.Gene;
+import codes.mydna.sequence_bank.lib.grpc.GeneServiceGrpc;
+import codes.mydna.sequence_bank.lib.grpc.GeneServiceProto;
+import codes.mydna.sequence_bank.lib.grpc.mappers.GrpcGeneMapper;
+import codes.mydna.sequence_bank.lib.grpc.mappers.GrpcUserMapper;
 import com.kumuluz.ee.grpc.client.GrpcChannelConfig;
 import com.kumuluz.ee.grpc.client.GrpcChannels;
 import com.kumuluz.ee.grpc.client.GrpcClient;

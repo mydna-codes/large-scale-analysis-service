@@ -1,6 +1,6 @@
 package codes.mydna.consumers.kafka;
 
-import codes.mydna.lib.large_scale.LargeScaleAnalysisRequest;
+import codes.mydna.large_scale_analysis.lib.LargeScaleAnalysisRequest;
 import codes.mydna.services.AnalysisService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;

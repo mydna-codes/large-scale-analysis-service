@@ -1,12 +1,12 @@
 package codes.mydna.clients.grpc;
 
+import codes.mydna.analysis_result.lib.AnalysisResult;
+import codes.mydna.analysis_result.lib.enums.Status;
+import codes.mydna.analysis_result.lib.grpc.AnalysisResultProto;
+import codes.mydna.analysis_result.lib.grpc.AnalysisResultServiceGrpc;
+import codes.mydna.analysis_result.lib.grpc.mappers.GrpcAnalysisResultMapper;
 import codes.mydna.auth.common.models.User;
-import codes.mydna.lib.AnalysisResult;
-import codes.mydna.lib.enums.Status;
-import codes.mydna.lib.grpc.AnalysisResultProto;
-import codes.mydna.lib.grpc.AnalysisResultServiceGrpc;
-import codes.mydna.lib.grpc.mappers.GrpcAnalysisResultMapper;
-import codes.mydna.lib.grpc.mappers.GrpcUserMapper;
+import codes.mydna.sequence_bank.lib.grpc.mappers.GrpcUserMapper;
 import com.kumuluz.ee.grpc.client.GrpcChannelConfig;
 import com.kumuluz.ee.grpc.client.GrpcChannels;
 import com.kumuluz.ee.grpc.client.GrpcClient;
